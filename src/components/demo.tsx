@@ -130,17 +130,17 @@ function ModelResult({
   return (
     <div className="rounded-2xl border border-[#e8e7e1] bg-white p-5">
       <div className="mb-5 flex items-center gap-3">
-        <span className="flex size-10 items-center justify-center rounded-xl bg-[#f3f3ee] text-[#5c625a]">
+        <span className="flex size-10 items-center justify-center rounded-xl bg-[#eee8f3] text-muted">
           <Icon size={19} strokeWidth={1.6} aria-hidden="true" />
         </span>
         <div>
-          <p className="text-sm font-semibold tracking-tight text-[#202221]">{type === "yolo" ? "YOLOv8" : "RGB / HSV"}</p>
-          <p className="mt-0.5 text-xs text-[#5f615b]">{type === "yolo" ? "Deep learning approach" : "Color feature approach"}</p>
+          <p className="text-sm font-semibold tracking-tight text-[#261e32]">{type === "yolo" ? "YOLOv8" : "RGB / HSV"}</p>
+          <p className="mt-0.5 text-xs text-muted">{type === "yolo" ? "Deep learning approach" : "Color feature approach"}</p>
         </div>
       </div>
-      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#5f615b]">Prewritten example class</p>
-      <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium ${result === "Anemia" ? "bg-[#f7e9ec] text-[#a63146]" : "bg-[#eaf0e9] text-[#4d6551]"}`}>
-        <span className={`size-1.5 rounded-full ${result === "Anemia" ? "bg-[#a63146]" : "bg-[#6b8669]"}`} aria-hidden="true" />
+      <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-muted">Prewritten example class</p>
+      <span className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium ${result === "Anemia" ? "bg-[#eee8f3] text-[#5b2a86]" : "bg-[#edf2d5] text-[#4d6551]"}`}>
+        <span className={`size-1.5 rounded-full ${result === "Anemia" ? "bg-[#5b2a86]" : "bg-[#6b8669]"}`} aria-hidden="true" />
         {result}
       </span>
     </div>
@@ -257,35 +257,35 @@ export function Demo() {
   }
 
   return (
-    <section id="demo" className="scroll-mt-24 bg-[#f8f8f5] py-20 sm:py-28">
+    <section id="demo" className="scroll-mt-24 bg-[#f6f3ea] py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div className="mb-10 flex flex-col justify-between gap-5 sm:mb-12 lg:flex-row lg:items-end">
           <div>
-            <p className="mb-4 flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#a63146]">
-              <span className="h-px w-6 bg-[#a63146]" aria-hidden="true" />
+            <p className="mb-4 flex items-center gap-2.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#5b2a86]">
+              <span className="h-px w-6 bg-[#5b2a86]" aria-hidden="true" />
               Interactive experience
             </p>
-            <h2 className="font-editorial text-[clamp(2.2rem,4.5vw,3.6rem)] leading-[1.08] tracking-[-0.04em] text-[#202221]">See the workflow in action.</h2>
-            <p className="mt-4 max-w-xl text-sm leading-7 text-[#5f615c] sm:text-[15px]">One image. Two approaches. Explore how a screening interface could bring the research together.</p>
+            <h2 className="font-editorial text-[clamp(2.2rem,4.5vw,3.6rem)] leading-[1.08] tracking-[-0.04em] text-[#261e32]">See the workflow in action.</h2>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-muted sm:text-[15px]">One image. Two approaches. Explore how a screening interface could bring the research together.</p>
           </div>
-          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#e4d9db] bg-[#f3e9eb] px-3.5 py-2 text-[11px] font-medium text-[#934153]">
+          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-[#e4d9db] bg-[#eee8f3] px-3.5 py-2 text-[11px] font-medium text-[#5b2a86]">
             <FlaskConical size={13} aria-hidden="true" />
             Simulated demonstration
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-3xl border border-[#dfdfd7] bg-white shadow-[0_12px_45px_-35px_rgba(32,34,33,0.22)]">
+        <div className="overflow-hidden rounded-3xl border border-[#ddd6e1] bg-white shadow-[0_12px_45px_-35px_rgba(32,34,33,0.22)]">
           <div className="grid lg:grid-cols-[1.06fr_1fr]">
-            <div className="border-b border-[#e6e6de] p-5 sm:p-8 lg:border-r lg:border-b-0 lg:p-9">
+            <div className="border-b border-[#ddd6e1] p-5 sm:p-8 lg:border-r lg:border-b-0 lg:p-9">
               <div className="mb-6 flex items-center justify-between gap-3">
-                <h3 className="flex items-center gap-3 text-sm font-semibold text-[#202221]">
-                  <span className="flex size-6 items-center justify-center rounded-full border border-[#e3e3db] text-[10px] font-normal text-[#5f615b]">01</span>
+                <h3 className="flex items-center gap-3 text-sm font-semibold text-[#261e32]">
+                  <span className="flex size-6 items-center justify-center rounded-full border border-[#ddd6e1] text-[10px] font-normal text-muted">01</span>
                   Choose your input
                 </h3>
-                <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-[#5f615c]">Demo workspace</span>
+                <span className="text-[10px] font-medium uppercase tracking-[0.12em] text-muted">Demo workspace</span>
               </div>
 
-              <div className="mb-5 grid grid-cols-2 gap-1 rounded-xl bg-[#f1f2ed] p-1" aria-label="Input method">
+              <div className="mb-5 grid grid-cols-2 gap-1 rounded-xl bg-[#eee8f3] p-1" aria-label="Input method">
                 {([
                   ["sample", "Try an illustration"],
                   ["upload", "Upload an image"],
@@ -295,7 +295,7 @@ export function Demo() {
                     type="button"
                     aria-pressed={mode === value}
                     onClick={() => changeMode(value)}
-                    className={`rounded-lg px-3 py-2.5 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a63146] ${mode === value ? "bg-white text-[#202221] shadow-sm" : "text-[#5f615a] hover:text-[#202221]"}`}
+                    className={`rounded-lg px-3 py-2.5 text-xs font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5b2a86] ${mode === value ? "bg-white text-[#261e32] shadow-sm" : "text-muted hover:text-[#261e32]"}`}
                   >
                     {label}
                   </button>
@@ -305,10 +305,10 @@ export function Demo() {
               {mode === "sample" ? (
                 <div className="relative overflow-hidden rounded-2xl bg-[#e9e2d9]">
                   <EyeIllustration scenario={scenario} className="aspect-[13/8] w-full" />
-                  <span className="absolute top-3 left-3 rounded-full bg-white/85 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.11em] text-[#645f57] backdrop-blur-sm">Original illustration</span>
+                  <span className="absolute top-3 left-3 rounded-full bg-white/85 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.11em] text-muted backdrop-blur-sm">Original illustration</span>
                   <div className="absolute right-3 bottom-3 left-3 flex items-center justify-between rounded-lg border border-white/60 bg-white/85 px-3 py-2 backdrop-blur-sm">
-                    <span className="text-[11px] font-medium text-[#615c54]">Palpebral conjunctiva</span>
-                    <ScanLine size={15} className="text-[#a63146]" aria-hidden="true" />
+                    <span className="text-[11px] font-medium text-muted">Palpebral conjunctiva</span>
+                    <ScanLine size={15} className="text-[#5b2a86]" aria-hidden="true" />
                   </div>
                 </div>
               ) : (
@@ -335,7 +335,7 @@ export function Demo() {
                     }
                     receiveFile(event.dataTransfer.files[0]);
                   }}
-                  className={`relative flex aspect-[13/8] items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed transition-colors ${isDragging ? "border-[#a63146] bg-[#f8edf0]" : "border-[#dedfd7] bg-[#f8f8f5]"}`}
+                  className={`relative flex aspect-[13/8] items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed transition-colors ${isDragging ? "border-[#5b2a86] bg-[#eee8f3]" : "border-[#ddd6e1] bg-[#f6f3ea]"}`}
                 >
                   {previewUrl ? (
                     <>
@@ -355,7 +355,7 @@ export function Demo() {
                       <button
                         type="button"
                         aria-label="Remove uploaded image"
-                        className="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full border border-[#e0e0d8] bg-white text-[#5d6159] shadow-sm transition-colors hover:text-[#a63146] focus-visible:outline-2 focus-visible:outline-[#a63146]"
+                        className="absolute top-3 right-3 flex size-8 items-center justify-center rounded-full border border-[#e0e0d8] bg-white text-muted shadow-sm transition-colors hover:text-[#5b2a86] focus-visible:outline-2 focus-visible:outline-[#5b2a86]"
                         onClick={() => {
                           cancelRun();
                           removeUpload();
@@ -364,19 +364,19 @@ export function Demo() {
                       >
                         <X size={14} aria-hidden="true" />
                       </button>
-                      <span className="absolute right-3 bottom-3 left-3 truncate rounded-lg border border-[#e6e6dd] bg-white/90 px-3 py-2 text-[11px] text-[#5d6259] backdrop-blur-sm">{fileName}</span>
+                      <span className="absolute right-3 bottom-3 left-3 truncate rounded-lg border border-[#e6e6dd] bg-white/90 px-3 py-2 text-[11px] text-muted backdrop-blur-sm">{fileName}</span>
                     </>
                   ) : (
                     <div className="px-5 text-center">
-                      <span className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl border border-[#e5e5dc] bg-white text-[#a63146]">
+                      <span className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl border border-[#e5e5dc] bg-white text-[#5b2a86]">
                         <Upload size={21} strokeWidth={1.5} aria-hidden="true" />
                       </span>
-                      <p className="text-sm font-medium text-[#202221]">Drop an image here</p>
-                      <p className="mt-1 text-xs text-[#5f615b]">PNG, JPEG or WebP · up to 10 MB</p>
+                      <p className="text-sm font-medium text-[#261e32]">Drop an image here</p>
+                      <p className="mt-1 text-xs text-muted">PNG, JPEG or WebP · up to 10 MB</p>
                       <button
                         type="button"
                         onClick={() => fileInput.current?.click()}
-                        className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-[#a63146] underline decoration-[#d7a4ad] underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a63146]"
+                        className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-[#5b2a86] underline decoration-[#ad8cca] underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#5b2a86]"
                       >
                         Browse files <ChevronRight size={13} aria-hidden="true" />
                       </button>
@@ -395,11 +395,11 @@ export function Demo() {
                 aria-describedby={error ? uploadErrorId : previewDescriptionId}
                 onChange={(event) => receiveFile(event.target.files?.[0])}
               />
-              <div id={previewDescriptionId} className="mt-3 flex items-start gap-1.5 text-[10px] leading-5 text-[#5e6158]">
+              <div id={previewDescriptionId} className="mt-3 flex items-start gap-1.5 text-[10px] leading-5 text-muted">
                 <Info size={12} className="mt-1 shrink-0" aria-hidden="true" />
                 <p>{mode === "sample" ? "Illustrative tissue only. These images do not represent real patients." : "Your image stays in this browser. It is a preview only; no model reads its pixels."}</p>
               </div>
-              {error && <p id={uploadErrorId} role="alert" className="mt-3 rounded-lg bg-[#f8e9ec] px-3 py-2 text-xs leading-5 text-[#a63146]">{error}</p>}
+              {error && <p id={uploadErrorId} role="alert" className="mt-3 rounded-lg bg-[#eee8f3] px-3 py-2 text-xs leading-5 text-[#5b2a86]">{error}</p>}
 
               <fieldset className="mt-6">
                 <legend className="mb-3 text-[11px] font-semibold text-[#41463e]">{mode === "sample" ? "Choose an illustrative scenario" : "Choose the prewritten result scenario"}</legend>
@@ -414,17 +414,17 @@ export function Demo() {
                         cancelRun();
                         setScenario(item.id);
                       }}
-                      className={`group relative overflow-hidden rounded-xl border text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#a63146] ${scenario === item.id ? "border-[#a63146] bg-[#fbf3f5]" : "border-[#e7e7df] bg-white hover:border-[#b6b8af]"}`}
+                      className={`group relative overflow-hidden rounded-xl border text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5b2a86] ${scenario === item.id ? "border-[#5b2a86] bg-[#f3edf8]" : "border-[#ddd6e1] bg-white hover:border-[#b6b8af]"}`}
                     >
                       <EyeIllustration scenario={item.id} className="aspect-[13/6] w-full opacity-90" />
                       <span className="flex min-h-10 items-center justify-between gap-1 px-2 py-2 text-[10px] font-medium sm:px-3 sm:text-[11px]">
-                        <span className={scenario === item.id ? "text-[#a63146]" : "text-[#5c6258]"}>{item.shortName}</span>
-                        {scenario === item.id && <Check size={12} className="shrink-0 text-[#a63146]" aria-hidden="true" />}
+                        <span className={scenario === item.id ? "text-[#5b2a86]" : "text-muted"}>{item.shortName}</span>
+                        {scenario === item.id && <Check size={12} className="shrink-0 text-[#5b2a86]" aria-hidden="true" />}
                       </span>
                     </button>
                   ))}
                 </div>
-                <p className="mt-2 min-h-8 text-[10px] leading-5 text-[#5f615b]">{mode === "upload" ? "The chosen scenario determines both outputs, regardless of your uploaded image." : selected.description}</p>
+                <p className="mt-2 min-h-8 text-[10px] leading-5 text-muted">{mode === "upload" ? "The chosen scenario determines both outputs, regardless of your uploaded image." : selected.description}</p>
               </fieldset>
 
               <div className="mt-5 flex items-center gap-3">
@@ -432,7 +432,7 @@ export function Demo() {
                   type="button"
                   onClick={runDemo}
                   disabled={isRunning || (mode === "upload" && !previewUrl)}
-                  className="h-11 flex-1 gap-2 rounded-xl bg-[#a63146] text-xs font-medium text-white shadow-none hover:bg-[#8d293c] disabled:opacity-45"
+                  className="h-11 flex-1 gap-2 rounded-xl bg-[#5b2a86] text-xs font-medium text-white shadow-none hover:bg-[#3f1a62] disabled:opacity-45"
                 >
                   {isRunning ? <LoaderCircle size={15} className={reducedMotion ? "" : "animate-spin"} aria-hidden="true" /> : <ScanLine size={15} aria-hidden="true" />}
                   {isRunning ? "Playing simulated workflow…" : "Run simulated analysis"}
@@ -443,16 +443,16 @@ export function Demo() {
                   variant="outline"
                   onClick={reset}
                   aria-label="Reset simulated demonstration"
-                  className="size-11 shrink-0 rounded-xl border-[#e3e3da] bg-white p-0 text-[#5d6057] hover:bg-[#f5f5ef]"
+                  className="size-11 shrink-0 rounded-xl border-[#e3e3da] bg-white p-0 text-muted hover:bg-[#eee8f3]"
                 >
                   <RotateCcw size={15} aria-hidden="true" />
                 </Button>
               </div>
             </div>
 
-            <div className="flex flex-col bg-[#fcfcfa] p-5 sm:p-8 lg:p-9" aria-busy={isRunning}>
-              <h3 className="mb-6 flex items-center gap-3 text-sm font-semibold text-[#202221]">
-                <span className="flex size-6 items-center justify-center rounded-full border border-[#e3e3db] text-[10px] font-normal text-[#5f615b]">02</span>
+            <div className="flex flex-col bg-[#fffdf8] p-5 sm:p-8 lg:p-9" aria-busy={isRunning}>
+              <h3 className="mb-6 flex items-center gap-3 text-sm font-semibold text-[#261e32]">
+                <span className="flex size-6 items-center justify-center rounded-full border border-[#ddd6e1] text-[10px] font-normal text-muted">02</span>
                 Compare example outputs
               </h3>
 
@@ -466,12 +466,12 @@ export function Demo() {
                       exit={reducedMotion ? undefined : { opacity: 0 }}
                       className="flex min-h-[335px] flex-col items-center justify-center text-center"
                     >
-                      <div className="relative mb-6 flex size-20 items-center justify-center rounded-full border border-[#e5d6d8] bg-[#f8eff1] text-[#a63146]">
+                      <div className="relative mb-6 flex size-20 items-center justify-center rounded-full border border-[#e5d6d8] bg-[#eee8f3] text-[#5b2a86]">
                         <ScanLine size={31} strokeWidth={1.25} aria-hidden="true" />
                         {!reducedMotion && <motion.span className="absolute inset-[-7px] rounded-full border border-dashed border-[#dec0c7]" animate={{ rotate: 360 }} transition={{ duration: 14, repeat: Infinity, ease: "linear" }} />}
                       </div>
                       <p className="text-sm font-medium text-[#343a31]">Playing the workflow</p>
-                      <p className="mt-2 max-w-64 text-xs leading-6 text-[#5e6158]">Preparing the prewritten {selected.name.toLowerCase()} example. No model inference is running.</p>
+                      <p className="mt-2 max-w-64 text-xs leading-6 text-muted">Preparing the prewritten {selected.name.toLowerCase()} example. No model inference is running.</p>
                     </motion.div>
                   ) : completed && completedResult ? (
                     <motion.div
@@ -482,25 +482,25 @@ export function Demo() {
                       transition={{ duration: 0.25 }}
                     >
                       <div className="mb-5 flex items-center justify-between gap-3">
-                        <p className="text-xs font-medium text-[#5c6157]">{completed.name}</p>
-                        <span className="inline-flex items-center gap-1.5 text-[10px] font-medium text-[#56634f]"><Check size={12} aria-hidden="true" /> Example ready</span>
+                        <p className="text-xs font-medium text-muted">{completed.name}</p>
+                        <span className="inline-flex items-center gap-1.5 text-[10px] font-medium text-muted"><Check size={12} aria-hidden="true" /> Example ready</span>
                       </div>
                       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                         <ModelResult type="yolo" result={completedResult.predictions.yolo} />
                         <ModelResult type="color" result={completedResult.predictions.rgbHsv} />
                       </div>
-                      <div className="mt-5 rounded-2xl border border-[#e5e6dc] bg-[#f3f4ed] p-5">
+                      <div className="mt-5 rounded-2xl border border-[#e5e6dc] bg-[#eee8f3] p-5">
                         <div className="mb-2 flex items-center gap-2 text-sm font-medium text-[#4f5b47]">
                           {completedResult.predictions.yolo === completedResult.predictions.rgbHsv ? <Check size={16} aria-hidden="true" /> : <CircleHelp size={16} aria-hidden="true" />}
                           {completedResult.predictions.yolo === completedResult.predictions.rgbHsv ? "The example approaches agree" : "The example approaches disagree"}
                         </div>
-                        <p className="text-xs leading-6 text-[#5b6253]">
+                        <p className="text-xs leading-6 text-muted">
                           {completedResult.predictions.yolo === completedResult.predictions.rgbHsv
                             ? "Agreement illustrates matching binary outputs. It does not establish a diagnosis or show whether either output is correct."
                             : "A learned image classifier and a color feature classifier can return different classes. This illustrates why comparing approaches matters; neither example is a clinical conclusion."}
                         </p>
                       </div>
-                      <p className="mt-4 text-[11px] leading-6 text-[#5e6158]">These outputs are prewritten for your chosen scenario{mode === "upload" ? " and are unrelated to your uploaded image" : ""}. They are not patient screening results.</p>
+                      <p className="mt-4 text-[11px] leading-6 text-muted">These outputs are prewritten for your chosen scenario{mode === "upload" ? " and are unrelated to your uploaded image" : ""}. They are not patient screening results.</p>
                     </motion.div>
                   ) : (
                     <motion.div
@@ -510,13 +510,13 @@ export function Demo() {
                       exit={reducedMotion ? undefined : { opacity: 0 }}
                       className="flex min-h-[335px] flex-col items-center justify-center text-center"
                     >
-                      <div className="relative mb-7 flex size-20 items-center justify-center rounded-2xl border border-[#e6e7dc] bg-white text-[#5d6255] shadow-[0_5px_18px_-10px_rgba(64,75,52,0.2)]">
+                      <div className="relative mb-7 flex size-20 items-center justify-center rounded-2xl border border-[#e6e7dc] bg-white text-muted shadow-[0_5px_18px_-10px_rgba(64,75,52,0.2)]">
                         <ImagePlus size={30} strokeWidth={1.25} aria-hidden="true" />
-                        <span className="absolute -right-2 -bottom-2 flex size-7 items-center justify-center rounded-full border-4 border-[#fcfcfa] bg-[#edf0e5] text-[#58644d]"><ArrowRight size={12} aria-hidden="true" /></span>
+                        <span className="absolute -right-2 -bottom-2 flex size-7 items-center justify-center rounded-full border-4 border-[#fffdf8] bg-[#edf0e5] text-muted"><ArrowRight size={12} aria-hidden="true" /></span>
                       </div>
                       <p className="text-sm font-medium text-[#41493a]">A small preview of the possibilities.</p>
-                      <p className="mt-2 max-w-64 text-xs leading-6 text-[#5f6158]">Choose an example, then run the simulation to compare two prewritten binary outputs.</p>
-                      <div className="mt-6 flex items-center gap-3 text-[10px] text-[#5e6057]">
+                      <p className="mt-2 max-w-64 text-xs leading-6 text-muted">Choose an example, then run the simulation to compare two prewritten binary outputs.</p>
+                      <div className="mt-6 flex items-center gap-3 text-[10px] text-muted">
                         <span>Input</span><ChevronRight size={12} aria-hidden="true" /><span>Two approaches</span><ChevronRight size={12} aria-hidden="true" /><span>Compare</span>
                       </div>
                     </motion.div>
@@ -525,12 +525,12 @@ export function Demo() {
               </div>
 
               <div className="mt-7 flex items-start gap-2.5 border-t border-[#e7e8df] pt-5">
-                <Info size={15} className="mt-0.5 shrink-0 text-[#6a5d52]" aria-hidden="true" />
-                <p className="text-[11px] leading-6 text-[#625f56]"><span className="font-medium text-[#655f55]">Research, responsibly presented.</span> This is a simulated demonstration with no connected model. It cannot diagnose anemia. Clinical assessment and a blood test are needed to determine hemoglobin levels.</p>
+                <Info size={15} className="mt-0.5 shrink-0 text-muted" aria-hidden="true" />
+                <p className="text-[11px] leading-6 text-muted"><span className="font-medium text-muted">Research, responsibly presented.</span> This is a simulated demonstration with no connected model. It cannot diagnose anemia. Clinical assessment and a blood test are needed to determine hemoglobin levels.</p>
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-2 border-t border-[#e5e5dd] bg-[#f5f5ef] px-5 py-3 text-[10px] font-medium uppercase tracking-[0.12em] text-[#5f6157] sm:px-8 lg:px-9">
+          <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-2 border-t border-[#e5e5dd] bg-[#eee8f3] px-5 py-3 text-[10px] font-medium uppercase tracking-[0.12em] text-muted sm:px-8 lg:px-9">
             <span className="inline-flex items-center gap-2"><span className="size-1.5 rounded-full bg-[#97a187]" aria-hidden="true" />Simulated demonstration · no live inference</span>
             <span>Binary classes only · no confidence or severity scores</span>
           </div>

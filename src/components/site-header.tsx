@@ -1,22 +1,13 @@
 "use client";
-
-import { useState } from "react";
-import { ArrowUpRight, Eye, Menu, X } from "lucide-react";
+import { useEffect,useRef,useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { ArrowUpRight,Eye,Menu,X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const links = [{ href: "#research", label: "Overview" }, { href: "#methodology", label: "Methodology" }, { href: "#results", label: "Results" }, { href: "#about", label: "About" }];
-
-export function SiteHeader() {
-  const [open, setOpen] = useState(false);
-  return <>
-    <a href="#main" className="fixed left-5 top-3 z-100 -translate-y-24 rounded-lg bg-[#a63146] px-5 py-3 text-white focus:translate-y-0">Skip to content</a>
-    <header className="sticky top-0 z-50 border-b border-[#e5e7e1] bg-[#fafbf8]/95 backdrop-blur-xl">
-      <div className="section-shell flex h-20 items-center justify-between gap-5">
-        <a href="#home" aria-label="Conjunctiva home" className="flex items-center gap-2.5"><span className="flex size-8 items-center justify-center rounded-full bg-[#a63146] text-white"><Eye size={20} strokeWidth={1.5} /></span><span className="text-[22px] font-semibold tracking-[-.07em]">conjunctiva<span className="text-[#a63146]">.</span></span></a>
-        <nav aria-label="Main navigation" className="hidden items-center gap-8 lg:flex">{links.map(link => <a key={link.href} href={link.href} className="text-[13px] text-[#626760] transition-colors hover:text-[#a63146]">{link.label}</a>)}</nav>
-        <div className="flex items-center gap-3"><Button asChild variant="outline" size="sm" className="hidden border-[#d4d8ce] sm:inline-flex"><a href="/research-paper.pdf" target="_blank" rel="noreferrer">Read the paper<ArrowUpRight size={14} /></a></Button><button type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)} className="rounded-lg p-2 lg:hidden">{open ? <X size={21} /> : <Menu size={21} />}</button></div>
-      </div>
-      {open && <nav id="mobile-navigation" aria-label="Mobile navigation" className="section-shell flex flex-col gap-1 border-t border-[#e5e7e1] py-4 lg:hidden">{links.map(link => <a key={link.href} href={link.href} onClick={() => setOpen(false)} className="rounded-lg px-2 py-3 text-sm hover:bg-[#f0f1ed]">{link.label}</a>)}<a href="#demo" onClick={() => setOpen(false)} className="rounded-lg px-2 py-3 text-sm font-medium text-[#a63146]">Try the demo →</a></nav>}
-    </header>
-  </>;
+export const navigation=[{href:"/",label:"Home"},{href:"/about",label:"About"},{href:"/projects",label:"Projects"},{href:"/research",label:"Research"},{href:"/activities",label:"Activities"},{href:"/contact",label:"Contact"}];
+export function SiteHeader(){
+ const pathname=usePathname();const [open,setOpen]=useState(false);const toggle=useRef<HTMLButtonElement>(null);
+ useEffect(()=>{setOpen(false);},[pathname]);
+ useEffect(()=>{const escape=(event:KeyboardEvent)=>{if(event.key==="Escape"&&open){setOpen(false);toggle.current?.focus();}};window.addEventListener("keydown",escape);return()=>window.removeEventListener("keydown",escape);},[open]);
+ return <><a href="#main" className="fixed left-5 top-3 z-100 -translate-y-24 rounded-lg bg-primary px-5 py-3 text-white focus:translate-y-0">Skip to content</a><header className="sticky top-0 z-50 border-b border-line bg-canvas/95 backdrop-blur-xl"><div className="section-shell flex h-20 items-center justify-between gap-5"><Link href="/" aria-label="Conjunctiva home" className="flex shrink-0 items-center gap-2.5"><span className="flex size-9 items-center justify-center rounded-full bg-primary text-accent"><Eye size={21} strokeWidth={1.5}/></span><span className="text-[23px] font-semibold tracking-[-.065em]">conjunctiva<span className="text-primary">.</span></span></Link><nav aria-label="Main navigation" className="hidden h-full items-center gap-6 lg:flex">{navigation.map(link=><Link key={link.href} href={link.href} aria-current={pathname===link.href?"page":undefined} className={`relative flex h-full items-center text-[13px] transition-colors hover:text-primary ${pathname===link.href?"font-semibold text-primary":"text-muted"}`}>{link.label}{pathname===link.href&&<span className="absolute inset-x-0 bottom-4 h-0.5 rounded bg-primary"/>}</Link>)}</nav><div className="flex items-center gap-3"><Button asChild variant="secondary" size="sm" className="hidden sm:inline-flex"><a href="/research-paper.pdf" target="_blank" rel="noreferrer">Read the paper<ArrowUpRight size={14}/></a></Button><button ref={toggle} type="button" aria-label={open?"Close navigation":"Open navigation"} aria-expanded={open} aria-controls="mobile-navigation" onClick={()=>setOpen(!open)} className="rounded-lg p-2 lg:hidden">{open?<X size={22}/>:<Menu size={22}/>}</button></div></div>{open&&<nav id="mobile-navigation" aria-label="Mobile navigation" className="section-shell grid grid-cols-2 gap-2 border-t border-line py-4 lg:hidden">{navigation.map(link=><Link key={link.href} href={link.href} aria-current={pathname===link.href?"page":undefined} onClick={()=>setOpen(false)} className={`rounded-xl px-4 py-3 text-sm transition-colors ${pathname===link.href?"bg-primary font-semibold text-white":"bg-surface text-ink hover:bg-accent"}`}>{link.label}</Link>)}</nav>}</header></>;
 }

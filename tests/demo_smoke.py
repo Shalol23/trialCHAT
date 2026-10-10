@@ -57,7 +57,7 @@ with sync_playwright() as p:
     )
     page = browser.new_page(viewport={"width": 1440, "height": 1000})
     page.on("pageerror", lambda error: errors.append(str(error)))
-    page.goto(BASE_URL, wait_until="networkidle")
+    page.goto(BASE_URL.rstrip("/") + "/projects", wait_until="networkidle")
     page.on(
         "request",
         lambda request: requests.append(request.url)
@@ -138,7 +138,7 @@ with sync_playwright() as p:
     )
     mobile_page = mobile.new_page()
     mobile_page.on("pageerror", lambda error: errors.append(str(error)))
-    mobile_page.goto(BASE_URL, wait_until="networkidle")
+    mobile_page.goto(BASE_URL.rstrip("/") + "/projects", wait_until="networkidle")
     mobile_demo = mobile_page.locator("#demo")
     mobile_demo.scroll_into_view_if_needed()
     mobile_demo.get_by_role("button", name="Upload an image", exact=True).click()
